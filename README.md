@@ -12,4 +12,4 @@ This is a clone of the iconic login page for Microsoft (outlook) accounts with i
 
 Below is a short clip of what this clone looks like
 
-<img src="clone.gif" alt="preview" />
+<img src="assets/preview.gif" alt="preview" />
