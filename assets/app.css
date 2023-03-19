@@ -294,16 +294,16 @@ img{
         padding: 24px !important;
         width: unset !important;
         max-width: unset !important;
-        margin: 0 30px !important;
     }
     .opts{
         box-shadow: none !important;
         padding: 8px 24px !important;
         border: 1px solid #999;
-        /* padding of 24px on both sides = 48px*/
-        /* padding of 24px on authwrapper and margin of 30px  sides = 54px*/
-        max-width: calc(100% - 112px);
+        max-width: calc(100% - 48px);
         margin: 12% auto !important;
+    }
+    .footer{
+        justify-content: start;
     }
 }
 :root {
