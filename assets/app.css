@@ -286,6 +286,9 @@ img{
     html, body{
         background-color: #fff;
     }
+    section{
+        display:block !important;
+    }
     .auth-wrapper{
         box-shadow: none !important;
         padding: 24px !important;
